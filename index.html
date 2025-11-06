@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>space invade con divs</title>
+    <link rel="stylesheet" href="config/style.css">
+</head>
+
+<body>
+    <h1>space invaders</h1>
+
+    <div id="start-screen">
+        <img src="imagen/portada.gif" alt="">
+        <img src="imagen/space invaders.png" alt="">
+        <button id="start-button">Jugar</button>
+        <button id="btnMusica">🎵 Música</button>
+
+    </div> 
+    <div id="gameContainer">
+        <canvas id="canvas"></canvas>
+        <div class="nave" id="nave"></div>
+    </div>
+    <script src="config/script.js"></script>
+    
+    <script>    const btnMusica = document.getElementById("btnMusica");
+        let musicaActiva = false;
+        // Al hacer click en el botón
+        btnMusica.addEventListener("click", () => {
+            if (!musicaActiva) {
+                musica.play();
+                btnMusica.textContent = "⏸ Pausar Música";
+                musicaActiva = true;
+            } else {
+                musica.pause();
+                btnMusica.textContent = " Música";
+                musicaActiva = false;
+            }
+        });</script> 
+</body>
+
+</html>

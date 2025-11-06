@@ -1,0 +1,183 @@
+body {
+  background-image: url('../imagen/fondo_de_juego.jpg');
+  background-size: cover;      
+  background-position: center;  /* centra la imagen */
+  background-repeat: no-repeat; /* evita que se repita */
+  color: white;
+  text-align: center;
+
+}
+
+#gameContainer {
+  position: relative;
+  /*para desplazar un elemento respecto a su posición original sin afectar el flujo del diseño de los demás elementos*/
+  margin: auto;
+  width: 600px;
+  /* ejemplo */
+  height: 500px;
+  /* ejemplo */
+  background: black;
+  overflow: hidden;
+  /* opcional: para que las balas no salgan del contenedor */
+  border: 5px solid white;
+
+}
+
+
+.nave {
+  position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+     background-image: url('../sprite/1.png');
+      background-size: cover;
+    background-position: center; 
+    transform: translate X (-50%);
+
+  animation: kick 0.6s steps(2) infinite;
+
+
+
+}
+
+@keyframes kick {
+  0% {
+    background-position: 0 0;
+  }
+
+  /* Use height of image here as y position */
+  100% {
+    background-position: 0 -3px;
+  }
+}
+
+
+.enemy {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bullet {
+  position: absolute;
+  width: 4px;
+  height: 10px;
+  background-color: yellow;
+    box-shadow: 
+    0 0 5px rgb(251, 255, 0),
+    0 0 10px rgb(229, 255, 0),
+    0 0 20px rgb(255, 255, 0),
+    0 0 30px rgb(251, 247, 3);
+}
+
+#btnMusica {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 8px 15px;
+  background: black;
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+#btnMusica:hover {
+  background: gray;
+}
+
+.enemy-bullet {
+  background-color: rgb(34, 255, 0);
+  position: absolute;
+  width: 10px;
+  height: 10px;
+    box-shadow: 
+    0 0 5px rgb(34, 255, 0),
+    0 0 10px rgb(34, 255, 0),
+    0 0 20px rgb(34, 255, 0),
+    0 0 30px rgb(34, 255, 0);
+}
+
+.end-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 100;
+}
+
+.end-container img {
+  width: 400px;
+  height: auto;
+  border: 5px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  display: block;
+  margin: 0 auto;
+}
+
+.end-container div {
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
+  margin-top: 10px;
+}
+
+.end-container button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid white;
+  background: black;
+  color: white;
+  margin-left: 10px;
+}
+
+.end-container img {
+  width: 400px;
+  height: 200px;
+  /* fuerza altura exacta */
+  object-fit: cover;
+  /* rellena y recorta si es necesario */
+}
+
+/**/
+#start-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: sans-serif;
+  z-index: 100;
+}
+
+#start-screen h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#start-screen button {
+  font-size: 24px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid white;
+  background: black;
+  color: white;
+}
